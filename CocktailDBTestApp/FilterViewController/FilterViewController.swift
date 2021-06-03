@@ -33,7 +33,6 @@ class FilterViewController: UIViewController {
             }
         }
         startSelectedRow = tableView.indexPathsForSelectedRows
-        
     }
     
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ class FilterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        selectedtheSame = startSelectedRow == selectedCategories ? true : false
+        selectedtheSame = startSelectedRow?.sorted() == selectedCategories?.sorted() ? true : false
     }
 }
 
@@ -64,15 +63,10 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         cell?.backgroundColor = .clear
-       // categories[indexPath.row].filtered = true
-        
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
-       // categories[indexPath.row].filtered = false
-        
-        
     }
 }

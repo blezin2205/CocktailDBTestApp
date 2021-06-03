@@ -68,7 +68,7 @@ class NetworkManager {
         if settings.categories.isEmpty {
             fetchCategories(from: settings.url) { result in
                 switch result {
-                
+            
                 case .success(let categories):
                     self.settings.categories = categories
                     self.fetchDrinksForCategory(url: self.settings.urlFilter, params: ["c" : categories[sectionIndex].name]) { result in

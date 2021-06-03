@@ -12,9 +12,8 @@ class DrinksViewController: UIViewController {
     private let networkManager = NetworkManager()
     private var indexSection = 0
     private var drinksArrayForCategory = [DrinksForCategory]()
-    
     private lazy var footerView = FooterView()
-
+    private var paginRequest = false
     private var selectedTheSame = false
     var categories: [Categories] {
         Settings.shared.categories
@@ -22,7 +21,6 @@ class DrinksViewController: UIViewController {
     
     @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,22 +34,20 @@ class DrinksViewController: UIViewController {
         startFetch()
     }
 
-    
     private func startFetch() {
         networkManager.startFetch(sectionIndex: indexSection) { [unowned self] result in
             switch result {
             case .success(let drinksForCategory):
-                self.drinksArrayForCategory.append(drinksForCategory)
-                
+                drinksArrayForCategory.append(drinksForCategory)
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.filterButton.isEnabled = true
+                    tableView.reloadData()
+                    filterButton.isEnabled = true
                 }
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.footerView.setTitle("Data can't be downloaded")
-                    self.showAlert(title: "Error", message: error.localizedDescription)
+                    footerView.setTitle("Data can't be downloaded")
+                    showAlert(title: "Error", message: error.localizedDescription)
                 }
             }
         }
@@ -62,7 +58,6 @@ class DrinksViewController: UIViewController {
         guard let source = unwindSegue.source as? FilterViewController else { return }
         selectedTheSame = source.selectedtheSame
         if let selectedRows = source.selectedCategories {
-            
             let rows = selectedRows.map({$0.row}).sorted()
                 for (index, value) in categories.enumerated() {
                     value.filtered = false
@@ -99,27 +94,23 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return drinksArrayForCategory[section].drinksArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: DrinkViewCell.reuseId, for: indexPath) as! DrinkViewCell
         let drinkData = drinksArrayForCategory[indexPath.section].drinksArray[indexPath.row]
         cell.setCell(data: drinkData)
         return cell
     }
     
-    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
         if scrollView == tableView {
-            
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
             {
                 guard let sectionsCount = Settings.shared.filltredCategories?.count else {return}
                 if sectionsCount - 1 > indexSection {
+                    print("PAG")
                     footerView.setTitle(nil)
                     footerView.showLoader()
                     indexSection += 1
@@ -129,8 +120,6 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
                     let totalDrinkCount = drinksArrayForCategory.flatMap({$0.drinksArray}).count
                     footerView.setTitle("Loaded all content \n (\(sectionsCount) sections and \(totalDrinkCount) drinks)")
                 }
-                
-                
             }
         }
     }

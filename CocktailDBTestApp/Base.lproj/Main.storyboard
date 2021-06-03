@@ -58,15 +58,15 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="filterCell" textLabel="0fq-5r-hxE" rowHeight="80" style="IBUITableViewCellStyleDefault" id="0Sx-3A-tt3">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="filterCell" textLabel="0fq-5r-hxE" style="IBUITableViewCellStyleDefault" id="0Sx-3A-tt3">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="45.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Sx-3A-tt3" id="jMF-yG-Jw9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0fq-5r-hxE">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="80"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="45.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -85,7 +85,7 @@
                                 <rect key="frame" x="40" y="607" width="295" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="rI2-Xf-Sxm"/>
+                                    <constraint firstAttribute="height" constant="40" id="7My-U3-reB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Apply">
@@ -99,13 +99,13 @@
                         <viewLayoutGuide key="safeArea" id="Mjv-C7-Oqw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mjv-C7-Oqw" firstAttribute="trailing" secondItem="jvV-pk-N2f" secondAttribute="trailing" constant="40" id="0TJ-Ok-a45"/>
-                            <constraint firstItem="mY0-W1-wbt" firstAttribute="trailing" secondItem="Mjv-C7-Oqw" secondAttribute="trailing" id="VDk-3X-VFT"/>
-                            <constraint firstItem="jvV-pk-N2f" firstAttribute="leading" secondItem="Mjv-C7-Oqw" secondAttribute="leading" constant="40" id="Wqo-89-dD9"/>
-                            <constraint firstItem="mY0-W1-wbt" firstAttribute="top" secondItem="Mjv-C7-Oqw" secondAttribute="top" id="Yzz-r5-r6Z"/>
-                            <constraint firstItem="mY0-W1-wbt" firstAttribute="leading" secondItem="Mjv-C7-Oqw" secondAttribute="leading" id="aVp-qC-PW5"/>
-                            <constraint firstItem="mY0-W1-wbt" firstAttribute="bottom" secondItem="Mjv-C7-Oqw" secondAttribute="bottom" id="jEA-Iv-2dT"/>
-                            <constraint firstItem="Mjv-C7-Oqw" firstAttribute="bottom" secondItem="jvV-pk-N2f" secondAttribute="bottom" constant="20" id="jg8-VG-pDE"/>
+                            <constraint firstItem="mY0-W1-wbt" firstAttribute="bottom" secondItem="Mjv-C7-Oqw" secondAttribute="bottom" id="4I6-d5-EhE"/>
+                            <constraint firstItem="Mjv-C7-Oqw" firstAttribute="trailing" secondItem="jvV-pk-N2f" secondAttribute="trailing" constant="40" id="E4a-CC-PfZ"/>
+                            <constraint firstItem="Mjv-C7-Oqw" firstAttribute="bottom" secondItem="jvV-pk-N2f" secondAttribute="bottom" constant="20" id="Hko-OA-ObZ"/>
+                            <constraint firstItem="jvV-pk-N2f" firstAttribute="leading" secondItem="Mjv-C7-Oqw" secondAttribute="leading" constant="40" id="IJr-Fq-TEe"/>
+                            <constraint firstItem="mY0-W1-wbt" firstAttribute="top" secondItem="Mjv-C7-Oqw" secondAttribute="top" id="Iwd-qG-Cgc"/>
+                            <constraint firstItem="mY0-W1-wbt" firstAttribute="trailing" secondItem="Mjv-C7-Oqw" secondAttribute="trailing" id="OFL-xk-993"/>
+                            <constraint firstItem="mY0-W1-wbt" firstAttribute="leading" secondItem="Mjv-C7-Oqw" secondAttribute="leading" id="pfX-dZ-cmC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y8k-O2-Jwc"/>
