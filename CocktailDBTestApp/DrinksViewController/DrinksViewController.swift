@@ -61,7 +61,7 @@ class DrinksViewController: UIViewController {
         guard unwindSegue.identifier == "filter" else {return}
         guard let source = unwindSegue.source as? FilterViewController else { return }
         selectedTheSame = source.selectedtheSame
-        if let selectedRows = source.selectedCategories, !selectedTheSame {
+        if let selectedRows = source.selectedCategories {
             
             let rows = selectedRows.map({$0.row}).sorted()
                 for (index, value) in categories.enumerated() {

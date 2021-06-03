@@ -122,7 +122,6 @@
 			children = (
 				FAC8BB442666684B00FE7F51 /* NetworkManager.swift */,
 				FAC8BB56266686CB00FE7F51 /* Settings.swift */,
-				FA5A49892666C582005CC58E /* FooterView.swift */,
 				FA5A498C2666C5C2005CC58E /* Constraints.swift */,
 			);
 			path = Helpers;
@@ -132,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC8BB5D2666A47D00FE7F51 /* CustomImageView.swift */,
+				FA5A49892666C582005CC58E /* FooterView.swift */,
 				FAC8BB612666A4B400FE7F51 /* DrinkViewCell.swift */,
 			);
 			path = View;
