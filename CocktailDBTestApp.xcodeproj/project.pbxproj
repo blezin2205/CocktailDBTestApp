@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5A498A2666C582005CC58E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A49892666C582005CC58E /* FooterView.swift */; };
+		FA5A498D2666C5C2005CC58E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A498C2666C5C2005CC58E /* Constraints.swift */; };
+		FA5A49902666CFF6005CC58E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A498F2666CFF6005CC58E /* FilterViewController.swift */; };
 		FAC8BB2D266667AA00FE7F51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB2C266667AA00FE7F51 /* AppDelegate.swift */; };
 		FAC8BB2F266667AA00FE7F51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB2E266667AA00FE7F51 /* SceneDelegate.swift */; };
-		FAC8BB31266667AA00FE7F51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB30266667AA00FE7F51 /* ViewController.swift */; };
+		FAC8BB31266667AA00FE7F51 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB30266667AA00FE7F51 /* DrinksViewController.swift */; };
 		FAC8BB34266667AA00FE7F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC8BB32266667AA00FE7F51 /* Main.storyboard */; };
 		FAC8BB36266667AC00FE7F51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC8BB35266667AC00FE7F51 /* Assets.xcassets */; };
 		FAC8BB39266667AC00FE7F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC8BB37266667AC00FE7F51 /* LaunchScreen.storyboard */; };
+		FAC8BB452666684B00FE7F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB442666684B00FE7F51 /* NetworkManager.swift */; };
+		FAC8BB4D26667D0100FE7F51 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB4A26667D0000FE7F51 /* Categories.swift */; };
+		FAC8BB4E26667D0100FE7F51 /* DrinksForCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB4B26667D0000FE7F51 /* DrinksForCategory.swift */; };
+		FAC8BB4F26667D0100FE7F51 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB4C26667D0100FE7F51 /* Drinks.swift */; };
+		FAC8BB57266686CB00FE7F51 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB56266686CB00FE7F51 /* Settings.swift */; };
+		FAC8BB5E2666A47D00FE7F51 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB5D2666A47D00FE7F51 /* CustomImageView.swift */; };
+		FAC8BB622666A4B400FE7F51 /* DrinkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8BB612666A4B400FE7F51 /* DrinkViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA5A49892666C582005CC58E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		FA5A498C2666C5C2005CC58E /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		FA5A498F2666CFF6005CC58E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		FAC8BB29266667AA00FE7F51 /* CocktailDBTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailDBTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC8BB2C266667AA00FE7F51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC8BB2E266667AA00FE7F51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAC8BB30266667AA00FE7F51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAC8BB30266667AA00FE7F51 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		FAC8BB33266667AA00FE7F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC8BB35266667AC00FE7F51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC8BB38266667AC00FE7F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC8BB3A266667AC00FE7F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC8BB442666684B00FE7F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FAC8BB4A26667D0000FE7F51 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		FAC8BB4B26667D0000FE7F51 /* DrinksForCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksForCategory.swift; sourceTree = "<group>"; };
+		FAC8BB4C26667D0100FE7F51 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		FAC8BB56266686CB00FE7F51 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FAC8BB5D2666A47D00FE7F51 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		FAC8BB612666A4B400FE7F51 /* DrinkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +78,63 @@
 			children = (
 				FAC8BB2C266667AA00FE7F51 /* AppDelegate.swift */,
 				FAC8BB2E266667AA00FE7F51 /* SceneDelegate.swift */,
-				FAC8BB30266667AA00FE7F51 /* ViewController.swift */,
+				FAC8BB432666682C00FE7F51 /* FilterViewController */,
+				FAC8BB41266667F700FE7F51 /* DrinksViewController */,
 				FAC8BB32266667AA00FE7F51 /* Main.storyboard */,
 				FAC8BB35266667AC00FE7F51 /* Assets.xcassets */,
 				FAC8BB37266667AC00FE7F51 /* LaunchScreen.storyboard */,
 				FAC8BB3A266667AC00FE7F51 /* Info.plist */,
 			);
 			path = CocktailDBTestApp;
+			sourceTree = "<group>";
+		};
+		FAC8BB41266667F700FE7F51 /* DrinksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8BB5526667E9400FE7F51 /* Helpers */,
+				FAC8BB5C2666A44B00FE7F51 /* View */,
+				FAC8BB5226667D1500FE7F51 /* Model */,
+				FAC8BB30266667AA00FE7F51 /* DrinksViewController.swift */,
+			);
+			path = DrinksViewController;
+			sourceTree = "<group>";
+		};
+		FAC8BB432666682C00FE7F51 /* FilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A498F2666CFF6005CC58E /* FilterViewController.swift */,
+			);
+			path = FilterViewController;
+			sourceTree = "<group>";
+		};
+		FAC8BB5226667D1500FE7F51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8BB4A26667D0000FE7F51 /* Categories.swift */,
+				FAC8BB4C26667D0100FE7F51 /* Drinks.swift */,
+				FAC8BB4B26667D0000FE7F51 /* DrinksForCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAC8BB5526667E9400FE7F51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8BB442666684B00FE7F51 /* NetworkManager.swift */,
+				FAC8BB56266686CB00FE7F51 /* Settings.swift */,
+				FA5A49892666C582005CC58E /* FooterView.swift */,
+				FA5A498C2666C5C2005CC58E /* Constraints.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FAC8BB5C2666A44B00FE7F51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8BB5D2666A47D00FE7F51 /* CustomImageView.swift */,
+				FAC8BB612666A4B400FE7F51 /* DrinkViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +207,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC8BB31266667AA00FE7F51 /* ViewController.swift in Sources */,
+				FAC8BB4E26667D0100FE7F51 /* DrinksForCategory.swift in Sources */,
+				FAC8BB5E2666A47D00FE7F51 /* CustomImageView.swift in Sources */,
+				FAC8BB452666684B00FE7F51 /* NetworkManager.swift in Sources */,
+				FAC8BB57266686CB00FE7F51 /* Settings.swift in Sources */,
+				FA5A498D2666C5C2005CC58E /* Constraints.swift in Sources */,
+				FAC8BB31266667AA00FE7F51 /* DrinksViewController.swift in Sources */,
+				FAC8BB4D26667D0100FE7F51 /* Categories.swift in Sources */,
+				FA5A49902666CFF6005CC58E /* FilterViewController.swift in Sources */,
+				FA5A498A2666C582005CC58E /* FooterView.swift in Sources */,
 				FAC8BB2D266667AA00FE7F51 /* AppDelegate.swift in Sources */,
 				FAC8BB2F266667AA00FE7F51 /* SceneDelegate.swift in Sources */,
+				FAC8BB4F26667D0100FE7F51 /* Drinks.swift in Sources */,
+				FAC8BB622666A4B400FE7F51 /* DrinkViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8YNNXF4Y;
 				INFOPLIST_FILE = CocktailDBTestApp/Info.plist;
@@ -293,8 +374,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Blezin.CocktailDBTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Blezin.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8YNNXF4Y;
 				INFOPLIST_FILE = CocktailDBTestApp/Info.plist;
@@ -312,8 +395,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Blezin.CocktailDBTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Blezin.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
