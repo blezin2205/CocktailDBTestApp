@@ -9,21 +9,17 @@ import UIKit
 
 class FilterViewController: UIViewController {
     
-    let categories = Settings.shared.categories
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var applyButton: UIButton!
     
+    let categories = Settings.shared.categories
     var selectedtheSame = false
-    
+    private var startSelectedRow: [IndexPath]?
     var selectedCategories: [IndexPath]? {
         tableView.indexPathsForSelectedRows
     }
-    
-    private var startSelectedRow: [IndexPath]?
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        
         for (index, value) in categories.enumerated() {
             if value.filtered {
                 let indexPath = IndexPath(row: index, section: 0)
