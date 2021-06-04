@@ -37,8 +37,9 @@ override func viewWillAppear(_ animated: Bool) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        selectedtheSame = startSelectedRow?.sorted() == selectedCategories?.sorted() ? true : false
+        selectedtheSame = startSelectedRow?.sorted() == selectedCategories?.sorted()
         if categories.filter({$0.filtered}).isEmpty {
+           selectedtheSame = startSelectedRow?.count == categories.count
             for i in categories {
                 i.filtered = true
             }
