@@ -11,15 +11,13 @@ class FilterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var applyButton: UIButton!
-    
-    let categories = Settings.shared.categories
     var selectedtheSame = false
     private var startSelectedRow: [IndexPath]?
+    var categories = [Categories]()
     var selectedCategories: [IndexPath]? {
         tableView.indexPathsForSelectedRows
     }
-
-    override func viewWillAppear(_ animated: Bool) {
+override func viewWillAppear(_ animated: Bool) {
         for (index, value) in categories.enumerated() {
             if value.filtered {
                 let indexPath = IndexPath(row: index, section: 0)
@@ -39,7 +37,13 @@ class FilterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        selectedtheSame = startSelectedRow?.sorted() == selectedCategories?.sorted() ? true : false
+        selectedtheSame = startSelectedRow?.sorted() == selectedCategories?.sorted() ||
+        selectedCategories == nil && categories.filter({$0.filtered}).isEmpty ? true : false
+        if categories.filter({$0.filtered}).isEmpty {
+            for i in categories {
+                i.filtered = true
+            }
+        }
     }
 }
 
@@ -59,10 +63,12 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         cell?.backgroundColor = .clear
+        categories[indexPath.row].filtered = true
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
+        categories[indexPath.row].filtered = false
     }
 }

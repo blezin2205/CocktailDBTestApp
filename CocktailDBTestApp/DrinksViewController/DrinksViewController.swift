@@ -12,12 +12,9 @@ class DrinksViewController: UIViewController {
     private let networkManager = NetworkManager()
     private var indexSection = 0
     private var drinksArrayForCategory = [DrinksForCategory]()
+    var categories = [Categories]()
     private lazy var footerView = FooterView()
-    private var paginRequest = false
     private var selectedTheSame = false
-    var categories: [Categories] {
-        Settings.shared.categories
-    }
     
     @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -35,10 +32,11 @@ class DrinksViewController: UIViewController {
     }
 
     private func startFetch() {
-        networkManager.startFetch(sectionIndex: indexSection) { [unowned self] result in
+        networkManager.startFetch(categories: categories, sectionIndex: indexSection) { [unowned self] result in
             switch result {
-            case .success(let drinksForCategory):
-                drinksArrayForCategory.append(drinksForCategory)
+            case .success(let result):
+                categories = result.categories
+                drinksArrayForCategory.append(result.drinkForCategory)
                 DispatchQueue.main.async {
                     tableView.reloadData()
                     filterButton.isEnabled = true
@@ -53,32 +51,24 @@ class DrinksViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "filter" else { return }
+        guard let destination = segue.destination as? FilterViewController else {return }
+        destination.categories = categories
+    }
+    
     @IBAction func applyButton(_ unwindSegue: UIStoryboardSegue) {
         guard unwindSegue.identifier == "filter" else {return}
         guard let source = unwindSegue.source as? FilterViewController else { return }
         selectedTheSame = source.selectedtheSame
-        if let selectedRows = source.selectedCategories {
-            let rows = selectedRows.map({$0.row}).sorted()
-                for (index, value) in categories.enumerated() {
-                    value.filtered = false
-                    for i in rows {
-                        if i == index {
-                            value.filtered = true
-                        }
-                    }
-                }
-        } else {
-            for i in categories {
-                i.filtered = true
-            }
-        }
+        categories = source.categories
         if !selectedTheSame {
-            print("Not Same")
-            footerView.setTitle(nil)
-            indexSection = 0
-            drinksArrayForCategory.removeAll()
-            startFetch()
-        }
+                    print("Not Same")
+                    footerView.setTitle(nil)
+                    indexSection = 0
+                    drinksArrayForCategory.removeAll()
+                    startFetch()
+                }
     }
 }
 
@@ -108,9 +98,8 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
         if scrollView == tableView {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
             {
-                guard let sectionsCount = Settings.shared.filltredCategories?.count else {return}
+                let sectionsCount = categories.filter({$0.filtered}).count
                 if sectionsCount - 1 > indexSection {
-                    print("PAG")
                     footerView.setTitle(nil)
                     footerView.showLoader()
                     indexSection += 1

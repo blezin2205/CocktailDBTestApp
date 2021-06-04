@@ -63,20 +63,19 @@ class NetworkManager {
         }.resume()
     }
     
-    func startFetch(sectionIndex: Int, completion: @escaping (Result<DrinksForCategory, Error>) -> Void) {
+    func startFetch(categories: [Categories], sectionIndex: Int, completion: @escaping (Result<(drinkForCategory: DrinksForCategory, categories: [Categories]), Error>) -> Void) {
         
-        if settings.categories.isEmpty {
+        if categories.isEmpty {
             fetchCategories(from: settings.url) { result in
                 switch result {
-            
                 case .success(let categories):
                     self.settings.categories = categories
                     self.fetchDrinksForCategory(url: self.settings.urlFilter, params: ["c" : categories[sectionIndex].name]) { result in
                         switch result {
-                        
                         case .success(let drinks):
-                            completion(.success(DrinksForCategory(categoryName: categories[sectionIndex].name,
-                                                                  drinksName: drinks.drinks)))
+                            let tupleResult = (DrinksForCategory(categoryName: categories[sectionIndex].name,
+                                                                 drinksName: drinks.drinks), categories)
+                            completion(.success(tupleResult))
                         case .failure(let error):
                             completion(.failure(error))
                         }
@@ -86,13 +85,13 @@ class NetworkManager {
                 }
             }
         } else {
-            guard let filteredCategories = settings.filltredCategories else {return}
+            let filteredCategories = categories.filter({$0.filtered})
             fetchDrinksForCategory(url: settings.urlFilter, params: ["c" : filteredCategories[sectionIndex].name]) { result in
                 switch result {
-                
                 case .success(let drinks):
-                    completion(.success(DrinksForCategory(categoryName: filteredCategories[sectionIndex].name,
-                                                          drinksName: drinks.drinks)))
+                    let tupleResult = (DrinksForCategory(categoryName: filteredCategories[sectionIndex].name,
+                                                         drinksName: drinks.drinks), categories)
+                    completion(.success(tupleResult))
                 case .failure(let error):
                     completion(.failure(error))
                 }
