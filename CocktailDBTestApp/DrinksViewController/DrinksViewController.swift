@@ -63,6 +63,7 @@ class DrinksViewController: UIViewController {
         selectedTheSame = source.selectedtheSame
         categories = source.categories
         if !selectedTheSame {
+        print("Not th same")
                     footerView.setTitle(nil)
                     indexSection = 0
                     drinksArrayForCategory.removeAll()
